@@ -15,8 +15,8 @@ const corsOptions = {
   allowedHeaders: ['Content-Type'],
   credentials: true, // Optional, use if you're sending cookies or headers with auth
 };
-
 app.use(cors(corsOptions)); // Apply CORS to all routes
+
 // app.options('*', cors(corsOptions)); // Ensure OPTIONS request for preflight is handled
 app.options('*', cors());
 app.use(express.json());
