@@ -16,7 +16,7 @@ const GenerateMCQs = () => {
     // Set loading state
     setLoading(true);
     setError('');
-    
+    app.options('*', cors());
     try {
       // Sending request to the backend API
       const response = await fetch('https://orange-space-engine-p5vg5545x6jhr5vg-3001.app.github.dev/api/generate', {

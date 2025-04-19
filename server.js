@@ -17,8 +17,8 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions)); // Apply CORS to all routes
-app.options('*', cors(corsOptions)); // Ensure OPTIONS request for preflight is handled
-
+// app.options('*', cors(corsOptions)); // Ensure OPTIONS request for preflight is handled
+app.options('*', cors());
 app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
