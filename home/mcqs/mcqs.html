@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AP MCQ Generator</title>
+  <link rel="stylesheet" href="mcqs.css" />
+</head>
+<body>
+  <div style="max-width: 600px; margin: auto; font-family: Arial, sans-serif;">
+    <h2>AP MCQ Generator</h2>
+  
+    <label for="apSelect">Select AP Subject:</label>
+    <select id="apSelect">
+      <option value="AP Calculus BC">AP Calculus BC</option>
+      <option value="AP Physics 1">AP Physics 1</option>
+      <option value="AP Biology">AP Biology</option>
+      <option value="AP US History">AP US History</option>
+      <option value="AP Precalculus">AP Precalculus</option>
+      <option value="AP Computer Science Principles">AP Computer Science Principles</option>
+      <option value="AP Chemistry">AP Chemistry</option>
+      <option value="AP Computer Science A">AP Computer Science A</option>
+    </select>
+  
+    <br><br>
+  
+    <label for="unitSelect">Select Unit:</label>
+    <select id="unitSelect">
+      <option value="Unit 1">Unit 1</option>
+      <option value="Unit 2">Unit 2</option>
+      <option value="Unit 3">Unit 3</option>
+      <option value="Unit 4">Unit 4</option>
+      <option value="Unit 5">Unit 5</option>
+      <option value="Unit 6">Unit 6</option>
+      <option value="Unit 7">Unit 7</option>
+      <option value="Unit 8">Unit 8</option>
+      <option value="Unit 9">Unit 9</option>
+      <option value="Unit 10">Unit 10</option>
+    </select>
+  
+    <br><br>
+  
+    <button onclick="handleGenerate()">Generate MCQ</button>
+  
+    <div id="output" style="margin-top: 20px; white-space: pre-wrap;"></div>
+  
+    <div id="quiz" style="margin-top: 20px;"></div>
+  </div>
+
+  
+  <script src = "mcqs.js"></script>
+</body>
+</html>
