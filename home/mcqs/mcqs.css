@@ -27,3 +27,7 @@ body {
     border-radius: 5px;
     white-space: pre-wrap;
   }
+  label {
+    display: block;
+    margin-bottom: 10px; /* Adjust as needed */
+  }

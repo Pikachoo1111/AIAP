@@ -34,8 +34,7 @@ Do not include any text outside of the JSON structure.
 Make the question completely unrelated to any previous questions that have been created. 
 Change all numbers and ensure that question styles are unique, so that no two questions are the same. 
 Do not include any text outside of the JSON structure. 
-If necessary, do not use latex and use plain text instead. 
-This text is going to be shown in a plaintext html field and requires complete compatibility with that.`;
+You may use latex, but use $...$ for inline math and for math in the question, and $$...$$ for many line math, not to occur in the question under any circumstances`;
 
       try {
         const res = await fetch(HACKCLUB_URL, {
@@ -62,6 +61,8 @@ This text is going to be shown in a plaintext html field and requires complete c
         if (first >= 0 && last >= 0) {
           content = content.slice(first, last + 1);
         }
+        content = content.replace(/\\/g, '\\\\');
+
 
         const mcq = JSON.parse(content);
         const validationError = validateMCQ(mcq);
@@ -143,6 +144,7 @@ This text is going to be shown in a plaintext html field and requires complete c
       btn.textContent = "Submit Answer";
       form.appendChild(btn);
       quizDiv.appendChild(form);
+      MathJax.typeset();
     }
 
     function populateUnitsForAP() {
