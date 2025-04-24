@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AP FRQ Generator</title>
+  <link rel="stylesheet" href="frqs.css" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+  <div style="max-width: 700px; margin: auto; font-family: Arial, sans-serif; padding: 20px;">
+    <h2>AP Free Response Question Generator</h2>
+
+    <label for="apSelect"><strong>Select AP Subject:</strong></label><br>
+    <select id="apSelect" style="width: 100%; padding: 8px; margin-bottom: 16px;">
+      <option value="AP Calculus BC">AP Calculus BC</option>
+      <option value="AP Physics 1">AP Physics 1</option>
+      <option value="AP Biology">AP Biology</option>
+      <option value="AP US History">AP US History</option>
+      <option value="AP Precalculus">AP Precalculus</option>
+      <option value="AP Computer Science Principles">AP Computer Science Principles</option>
+      <option value="AP Chemistry">AP Chemistry</option>
+      <option value="AP Computer Science A">AP Computer Science A</option>
+    </select>
+
+    <label for="unitSelect"><strong>Select Unit:</strong></label><br>
+    <select id="unitSelect" style="width: 100%; padding: 8px; margin-bottom: 16px;"></select>
+
+    <button onclick="handleGenerate()" id="generateBtn" style="padding: 10px 20px; font-size: 16px;">
+      Generate FRQ
+    </button>
+
+    <hr>
+
+    <div id="output" style="margin-top: 20px; font-style: italic; color: #666;"></div>
+
+    <div id="quiz" style="margin-top: 30px;"></div>
+  </div>
+
+  <script src="frqs.js"></script>
+</body>
+</html>

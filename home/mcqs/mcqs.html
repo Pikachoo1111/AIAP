@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AP MCQ Generator</title>
+  <title>APAI - MCQ Generator</title>
   <link rel="stylesheet" href="mcqs.css" />
   <script>
     window.MathJax = {
@@ -50,7 +50,7 @@
   
     <br><br>
   
-    <button onclick="handleGenerate()">Generate MCQ</button>
+    <button onclick="handleGenerate()" id="generateBtn">Generate MCQ</button>
   
     <div id="output" style="margin-top: 20px; white-space: pre-wrap;"></div>
   
@@ -58,6 +58,6 @@
   </div>
 
   
-  <script src = "mcqs.js"></script>
+  <script src = "mcqs.js" defer></script>
 </body>
 </html>

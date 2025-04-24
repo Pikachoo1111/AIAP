@@ -1,33 +1,42 @@
 body {
-    font-family: sans-serif;
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f8f8f8;
-  }
-  select, button {
-    font-size: 1rem;
-    padding: 10px;
-    margin: 10px 0;
-    width: 100%;
-  }
-  button {
-    background-color: #0066ff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: #004dcc;
-  }
-  #output {
-    margin-top: 20px;
-    background: white;
-    padding: 15px;
-    border-radius: 5px;
-    white-space: pre-wrap;
-  }
-  label {
-    display: block;
-    margin-bottom: 10px; /* Adjust as needed */
-  }
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 10px;
+}
+
+select, button, textarea {
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004dcc;
+}
+
+#output {
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}

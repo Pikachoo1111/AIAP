@@ -1,0 +1,79 @@
+mjx-container[jax="SVG"][display="inline"] {
+  font-size: 90%;
+  vertical-align: middle;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 2rem;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+select, button, textarea {
+  padding: 0.6rem 1rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #004dcc;
+}
+
+#output, #quiz {
+  margin-top: 1.5rem;
+  white-space: pre-wrap;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#quiz p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #000;
+}
+
+ul {
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}

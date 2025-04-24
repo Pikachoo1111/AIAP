@@ -2,8 +2,8 @@ const HACKCLUB_URL = 'https://ai.hackclub.com/chat/completions';
 
     document.getElementById("apSelect")
             .addEventListener("change", populateUnitsForAP);
-    document.getElementById("generateBtn")
-            .addEventListener("click", handleGenerate);
+    // document.getElementById("generateBtn")
+            // .addEventListener("click", handleGenerate);
 
     async function generateMCQ() {
       const ap = document.getElementById("apSelect").value;
@@ -34,7 +34,8 @@ Do not include any text outside of the JSON structure.
 Make the question completely unrelated to any previous questions that have been created. 
 Change all numbers and ensure that question styles are unique, so that no two questions are the same. 
 Do not include any text outside of the JSON structure. 
-You may use latex, but use $...$ for inline math and for math in the question, and $$...$$ for many line math, not to occur in the question under any circumstances`;
+You may use latex, but use $...$ for inline math and for math in the question, and $$...$$ for many line math, not to occur in the question under any circumstances
+Ensure that the LaTex is valid, and uses the formatting of teh latest MathJax version.`;
 
       try {
         const res = await fetch(HACKCLUB_URL, {
@@ -125,6 +126,8 @@ You may use latex, but use $...$ for inline math and for math in the question, a
         }
         quizDiv.appendChild(res);
         form.querySelectorAll("input").forEach(i => i.disabled = true);
+        MathJax.typeset();
+
       };
 
       for (let L of ["A","B","C","D"]) {
@@ -150,25 +153,99 @@ You may use latex, but use $...$ for inline math and for math in the question, a
     function populateUnitsForAP() {
       const unitSelect = document.getElementById("unitSelect");
       const ap = document.getElementById("apSelect").value;
+    
       const apUnits = {
-        "AP Calculus BC": 10,
-        "AP Physics 1": 7,
-        "AP Biology": 8,
-        "AP US History": 9,
-        "AP Precalculus": 4,
-        "AP Computer Science Principles": 5,
-        "AP Chemistry": 9,
-        "AP Computer Science A": 10
+        "AP Calculus BC": [
+          "Limits and Continuity",
+          "Derivatives",
+          "Applications of Derivatives",
+          "Integrals",
+          "Applications of Integrals",
+          "Differential Equations",
+          "Applications of Differential Equations",
+          "Parametric, Polar, and Vector Functions",
+          "Series",
+          "Additional BC Topics"
+        ],
+        "AP Physics 1": [
+          "Kinematics",
+          "Forces and Newton’s Laws",
+          "Work, Energy, and Power",
+          "Systems of Particles and Linear Momentum",
+          "Rotation",
+          "Oscillations",
+          "Gravitation"
+        ],
+        "AP Biology": [
+          "Chemistry of Life",
+          "Cell Structure and Function",
+          "Cell Energetics",
+          "Cell Communication and Cell Cycle",
+          "Heredity",
+          "Gene Expression and Regulation",
+          "Natural Selection",
+          "Ecology"
+        ],
+        "AP US History": [
+          "1491–1607",
+          "1607–1754",
+          "1754–1800",
+          "1800–1848",
+          "1844–1877",
+          "1865–1898",
+          "1890–1945",
+          "1945–1980",
+          "1980–Present"
+        ],
+        "AP Precalculus": [
+          "Polynomial and Rational Functions",
+          "Exponential and Logarithmic Functions",
+          "Trigonometric and Polar Functions",
+          "Functions Involving Parameters, Vectors, and Matrices"
+        ],
+        "AP Computer Science Principles": [
+          "Creative Development",
+          "Data",
+          "Algorithms and Programming",
+          "Computer Systems and Networks",
+          "Impact of Computing"
+        ],
+        "AP Chemistry": [
+          "Atomic Structure and Properties",
+          "Molecular and Ionic Compound Structure and Properties",
+          "Intermolecular Forces and Properties",
+          "Chemical Reactions",
+          "Kinetics",
+          "Thermodynamics",
+          "Equilibrium",
+          "Acids and Bases",
+          "Applications of Thermodynamics"
+        ],
+        "AP Computer Science A": [
+          "Primitive Types",
+          "Using Objects",
+          "Boolean Expressions and if Statements",
+          "Iteration",
+          "Writing Classes",
+          "Array",
+          "ArrayList",
+          "2D Array",
+          "Inheritance",
+          "Recursion"
+        ]
       };
-      const count = apUnits[ap] || 4;
+    
+      const units = apUnits[ap] || [];
       unitSelect.innerHTML = "";
-      for (let i = 1; i <= count; i++) {
+    
+      units.forEach((topic, index) => {
         const opt = document.createElement("option");
-        opt.value = `Unit ${i}`;
-        opt.textContent = `Unit ${i}`;
+        const unitNum = index + 1;
+        opt.value = `Unit ${unitNum}`;
+        opt.textContent = `Unit ${unitNum}: ${topic}`;
         unitSelect.appendChild(opt);
-      }
+      });
     }
-
+    
     // initial populate
     populateUnitsForAP();
